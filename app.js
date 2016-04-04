@@ -23,7 +23,7 @@ function authInterceptor(API, auth , $window) {
    response: function(res,$window) {
   if(res.config.url.indexOf(API) === 0 && res.data.token) {
     auth.saveToken(res.data.token);
-     $window.location.href= "http://localhost:3001/"
+     $window.location.href= "http://localhost:3000/home.html"
 
 
      }
