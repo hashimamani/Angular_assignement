@@ -1,0 +1,26 @@
+/* Styles go here */
+body{
+  margin:10px;
+  font-size:14px;
+  font-family:Arial;
+}
+
+}
+.red{
+background-color: red;
+
+}
+.green{
+background-color: green;	
+
+}
+.orange{
+background-color: orange; 	
+}
+
+.black{
+color: white;
+background-color: black; 	
+}
+
+                

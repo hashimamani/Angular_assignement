@@ -1,0 +1,179 @@
+<!--
+ * Cytonn Technologies
+ *
+ * @author: Hashim Amani <hamani@cytonn.com>
+ *
+ * Project: Angular JS.
+ *
+ *-->
+
+
+<!DOCTYPE html>
+
+
+<html>
+
+  <head>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <script src="angular.min.js"></script>
+
+    <script src="script.js"></script>
+
+  </head>
+
+  <body>
+
+  <div ng-app="App" ng-controller="CrudCtrl">
+
+    <h2>Enter Customer Details Below</h2>
+    
+    Search: <input type="search" class="fa fa-search" ng-model="searchcustomer">
+
+    <br>
+
+    <br>
+
+  <table class="table  table-striped">
+
+      <tr>
+
+        <td>Name</td>
+
+        <td>Country</td>
+
+
+      </tr>
+
+      <tr ng-repeat="profile in Profiles | filter:searchcustomer">
+
+        <td>
+
+          <input type="text" ng-model="profile.name" ng-show="profile.editable">
+
+          <span ng-hide="profile.editable">{{ profile.name }}</span>
+
+        </td>
+
+        <td>
+
+          <input type="text" ng-model="profile.country" ng-show="profile.editable">
+
+          <span ng-hide="profile.editable">{{ profile.country }}</span>
+        </td>
+
+        <td>
+
+          <div ng-controller="OrderCtrl">
+
+
+                      <h2>Orders</h2>
+
+
+                      Search: <input type="search" class="fa fa-search" ng-model="searchorder">
+
+
+                      <br>
+                      <br>
+
+
+                            <table class="table  table-striped">
+
+                              <tr>
+
+                                <td>Item</td>
+
+                                <td>Amount</td>
+
+                                
+
+                              </tr>
+
+                              <tr ng-repeat="order in Orders | filter:searchorder">
+
+
+                                <td>
+
+                                  <input type="text" ng-model="order.item" ng-show="order.editable">
+
+
+                                  <span ng-hide="order.editable">{{ order.item }}</span>
+
+                                </td>
+
+                                <td>
+
+
+                                  <input type="text" ng-model="order.amount" ng-show="order.editable">
+
+
+                                  <span ng-hide="order.editable">{{ order.amount}}</span>
+
+
+                                </td>
+                              
+                                <td>
+
+
+                                  <button class=" btn btn-info" ng-click="editorder$index)" ng-hide="order.
+                                  editable">Edit</button>
+
+
+                                  <button class=" btn btn-success"  ng-click="saveorder($index)" ng-show="order.editable">Save</button>
+
+
+                                  <button class=" btn btn-danger" ng-click="deleteorder($index)"> Delete</button>
+                                   
+                                </td>
+
+
+                              </tr>
+
+
+                            </table>
+
+
+                             <br>
+
+                        <button class="btn btn-primary" ng-click="addorder()">Add Orders</button>
+
+                    </div>
+        </td>
+      
+        <td>
+
+
+          <button class=" btn btn-info" ng-click="edit($index)" ng-hide="profile.editable">Edit</button>
+
+
+          <button class=" btn btn-success"  ng-click="save($index)" ng-show="profile.editable">Save</button>
+
+
+          <button class=" btn btn-danger" ng-click="delete($index)"> Delete</button>
+
+
+         
+
+        </td>
+
+
+      </tr>
+
+
+    </table>
+
+
+      <br>
+
+      <button class="btn btn-primary" ng-click="add()">Add Customers</button>
+
+
+
+    </div>
+
+  </body>
+
+</html>

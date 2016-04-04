@@ -1,0 +1,78 @@
+<!--
+ * Cytonn Technologies
+ *
+ * @author: Hashim Amani <hamani@cytonn.com>
+ *
+ * Project: Angular JS.
+ *
+ *-->
+
+
+<html>
+
+
+    <head>
+
+
+    <title>Simple Angular Auth</title>
+    
+    <script src="routes/app.js"></script>
+    <script src="routes/routes.js"></script>
+    <script src="routes/users.js"></script>
+    <script src="angular.min.js"></script>
+   
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-beta.5/angular.min.js"></script>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <script src="app.js"></script>
+
+
+  </head>
+
+  <body>
+
+            <div ng-app="app" ng-controller="Main as main" alighn="center">
+ 
+                  <h1>Login</h1>
+
+                  <form class="form-group form-inline">  
+
+
+                            <input type="text" class= "form-control" ng-model="main.username" placeholder="username"><br>
+
+
+                            <input type="password" class = "form-control" ng-model="main.password" placeholder="password">
+
+                            <br>
+
+                            <br>
+
+                            <button class="btn" ng-click="main.login()" ng-hide="main.isAuthed()">Login</button>
+
+                            <button class="btn" ng-click="main.register()" ng-hide="main.isAuthed()">Register</button>
+                            
+                            <button class="btn" ng-click="main.logout()" ng-show="main.isAuthed()">Logout</button>
+
+                            <button class="btn" ng-click="main.getQuote()" ng-show = "main.isAuthed()">Add customers</button>                  
+
+                            <br>
+
+                            <br>
+
+                            <p>{{main.message}}</p>
+
+                            <br>
+
+                            <br>
+
+                            <br>
+
+               </form>
+         
+    </div>
+
+ </body>   
+</html>
