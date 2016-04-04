@@ -33,7 +33,7 @@ function authInterceptor(API, auth , $window) {
 
     responseError: function(res){
       if(res.status === 401){
-        $window.location.href = "http://www.cytonn.com"
+        $window.location.href = "http://localhost:3000/home.html"
       }
     }
   }
